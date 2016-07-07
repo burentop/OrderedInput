@@ -11,30 +11,30 @@
 
 int main()
 {
-    int val1, val2, val3;
-    int small = 0, medium = 0, large = 0;
+    string val1, val2, val3;
+    string small = " ", medium = " ", large = " ";
     
-    cout << "Please enter three whole numbers, separated by spaces: ";
+    cout << "Please enter three words, separated by spaces: ";
     cin >> val1 >> val2 >> val3;
     
     
-    if (val1 < val2 && val1 < val3)
+    if (val1.compare(val2) < 0 && val1.compare(val3) < 0)
         small = val1;
-    else if (val2 < val1 && val2 < val3)
+    else if (val2.compare(val1) < 0 && val2.compare(val3) < 0)
         small = val2;
     else
         small = val3;
     
-    if (val1 > val2 && val1 > val3)
+    if (val1.compare(val2) > 0 && val1.compare(val3) > 0)
         large = val1;
-    else if (val2 > val1 && val2 > val3)
+    else if (val2.compare(val1) > 0 && val2.compare(val3) > 0)
         large = val2;
     else
         large = val3;
     
-    if (small < val1 && large > val1)
+    if (small.compare(val1) < 0 && large.compare(val1) > 0)
         medium = val1;
-    else if (small < val2 && large > val2)
+    else if (small.compare(val2) < 0 && large.compare(val2) > 0)
         medium = val2;
     else
         medium = val3;
